@@ -1,4 +1,4 @@
-import img_placeholder_bg from "../../public/img_holder_w_bg.svg";
+import img_placeholder_bg from "../../public/img_holder.svg";
 import "../styles/Sidepanel.css";
 
 function Sidepanel() {
