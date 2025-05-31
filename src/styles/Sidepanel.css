@@ -1,0 +1,42 @@
+:root {
+	--deep-blue: #00171f;
+	--deep-green: #0a252e;
+	--light-blue: #c9e1f1;
+	--gold-yellow: #ffb400;
+}
+
+.sidepanel {
+	background-color: var(--deep-green);
+	color: white;
+	padding: 10px 20px;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+}
+
+.imgPicker {
+	width: fit-content;
+	display: flex;
+	align-items: center;
+	margin-left: auto;
+}
+
+.imgPicker button {
+	background-color: transparent;
+	border: 0;
+	color: white;
+	font-size: 10px;
+	cursor: pointer;
+}
+
+.imgPicker img {
+	width: 50px;
+	height: 50px;
+}
+
+label {
+	display: flex;
+	flex-direction: column;
+}
