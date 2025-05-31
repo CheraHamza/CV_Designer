@@ -1,0 +1,19 @@
+:root {
+	--deep-blue: #00171f;
+	--deep-green: #0a252e;
+	--light-blue: #c9e1f1;
+	--gold-yellow: #ffb400;
+}
+
+.previewSection {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--deep-blue);
+}
+
+.previewSection img {
+	width: 60%;
+	height: fit-content;
+	box-shadow: 0 0 0px 15px #647c84a7;
+}
