@@ -1,0 +1,33 @@
+:root {
+	--deep-blue: #00171f;
+	--deep-green: #0a252e;
+	--light-blue: #c9e1f1;
+	--gold-yellow: #ffb400;
+}
+
+.navBar {
+	display: flex;
+	flex-direction: column;
+	background-color: var(--deep-blue);
+}
+
+.navBar > img {
+	align-self: center;
+	margin-bottom: 50px;
+}
+
+.btnsWrapper {
+	display: flex;
+	flex-direction: column;
+}
+
+img {
+	width: 30px;
+	height: 30px;
+}
+
+.navBtn {
+	border: 0;
+	background-color: var(--deep-blue);
+	cursor: pointer;
+}
