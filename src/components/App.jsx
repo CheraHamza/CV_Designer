@@ -1,12 +1,11 @@
-import './App.css'
+import "../styles/App.css";
 
 function App() {
-
-  return (
-    <>
-      <h1>CV Designer</h1>
-    </>
-  )
+	return (
+		<>
+			<h1>CV Designer</h1>
+		</>
+	);
 }
 
-export default App
+export default App;
