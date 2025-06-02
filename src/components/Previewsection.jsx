@@ -1,4 +1,4 @@
-import cv from "../../public/CV.svg";
+import cv from "/CV.svg";
 import '../styles/Previewsection.css'
 
 function Previewsection() {
