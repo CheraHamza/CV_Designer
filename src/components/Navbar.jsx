@@ -1,34 +1,52 @@
-import logo from "../../public/logo.svg";
-import personal from "../../public/personal.svg";
-import education from "../../public/education.svg";
-import work from "../../public/work.svg";
-import projects from "../../public/projects.svg";
-import skills from "../../public/skills.svg";
-import interests from "../../public/interests.svg";
-import languages from "../../public/languages.svg";
+import logo from "/logo.png";
+import personal from "/personal.svg";
+import education from "/education.svg";
+import work from "/work.svg";
+import projects from "/projects.svg";
+import skills from "/skills.svg";
+import interests from "/interests.svg";
+import languages from "/languages.svg";
 import "../styles/Navbar.css";
 
-function Navbar() {
+function Navbar({ activeNavItem, onNavChange }) {
+	const navItems = [
+		{ key: "personal", icon: personal },
+		{ key: "education", icon: education },
+		{ key: "work", icon: work },
+		{ key: "projects", icon: projects },
+		{ key: "skills", icon: skills },
+		{ key: "interests", icon: interests },
+		{ key: "languages", icon: languages },
+	];
+
 	return (
 		<div className="navBar">
 			<img src={logo} alt="logo" />
 			<div className="btnsWrapper">
-				<Button img={personal}></Button>
-				<Button img={education}></Button>
-				<Button img={work}></Button>
-				<Button img={projects}></Button>
-				<Button img={skills}></Button>
-				<Button img={interests}></Button>
-				<Button img={languages}></Button>
+				{navItems.map((item) => (
+					<Button
+						key={item.key}
+						img={item.icon}
+						isSelected={item.key === activeNavItem}
+						handleClick={() => {
+							onNavChange(item.key);
+						}}
+					></Button>
+				))}
+				;
 			</div>
 		</div>
 	);
 }
 
-function Button({ img }) {
+function Button({ key, img, isSelected, handleClick }) {
 	return (
 		<>
-			<button className="navBtn">
+			<button
+				key={key}
+				className={"navBtn" + (isSelected ? " selected" : "")}
+				onClick={handleClick}
+			>
 				<img className="navLogo" src={img} />
 			</button>
 		</>

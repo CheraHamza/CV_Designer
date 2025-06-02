@@ -13,6 +13,7 @@
 
 .navBar > img {
 	align-self: center;
+	margin-top: 10px;
 	margin-bottom: 50px;
 }
 
@@ -27,7 +28,13 @@ img {
 }
 
 .navBtn {
+	display: flex;
 	border: 0;
+	padding: 10px;
 	background-color: var(--deep-blue);
 	cursor: pointer;
+}
+
+.navBtn.selected {
+	background-color: var(--deep-green);
 }
