@@ -1,14 +1,10 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "../styles/index.css";
-import Navbar from "./Navbar.jsx";
-import Sidepanel from "./Sidepanel.jsx";
-import Previewsection from "./Previewsection.jsx";
+import App from "./App";
 
 createRoot(document.getElementById("root")).render(
 	<StrictMode>
-		<Navbar></Navbar>
-		<Sidepanel></Sidepanel>
-		<Previewsection></Previewsection>
+		<App></App>
 	</StrictMode>
 );
