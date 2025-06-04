@@ -18,7 +18,7 @@
 	margin-top: 40px;
 }
 
-h1 {
+.sidepanel h1 {
 	font-size: 25px;
 	margin: 10px 0px;
 }
@@ -108,7 +108,8 @@ button.cancelBtn:hover {
 
 button.addBtn {
 	background-color: transparent;
-	margin: 0;
+	margin-top: 15px;
+
 	padding: 0;
 	border: 0;
 	color: var(--light-blue);
@@ -117,4 +118,40 @@ button.addBtn {
 
 button.addBtn:hover {
 	color: var(--gold-yellow);
+}
+
+.entriesWrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-top: 20px;
+}
+
+.entry {
+	display: flex;
+}
+
+button.entryBtn {
+	width: 80%;
+	background-color: var(--deep-blue);
+	color: var(--gold-yellow);
+	border: 0;
+	cursor: pointer;
+}
+
+button.entryBtn:hover {
+	background-color: var(--gold-yellow);
+	color: var(--deep-blue);
+	border: 0;
+}
+
+button.deleteBtn {
+	width: fit-content;
+	background-color: transparent;
+	border: 0;
+	cursor: pointer;
+}
+
+button.deleteBtn:hover {
+	background-color: var(--light-blue);
 }

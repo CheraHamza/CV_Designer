@@ -1,17 +1,24 @@
-import img_placeholder_bg from "/img_holder.svg";
+import imgPlaceholder from "/img_holder.svg";
+import bin from "/bin.svg";
 import "../styles/Sidepanel.css";
+import { useState } from "react";
+import { CV } from "../cvData";
+
+const cvData = new CV();
 
 function Sidepanel({
 	activeNavItem,
 	isAddingNewEntry,
 	handleIsAddingNewEntryState,
 }) {
+	const [dataEntries, setDataEntries] = useState(cvData.getData());
+
 	return (
 		<div className="sidepanel">
 			{activeNavItem === "personal" && (
 				<>
 					<h1 className="title">Personal Information</h1>
-					<ImagePicker img={img_placeholder_bg}></ImagePicker>
+					<ImagePicker img={imgPlaceholder}></ImagePicker>
 					<Form selectedNavItem={"personal"}></Form>
 				</>
 			)}
@@ -19,11 +26,23 @@ function Sidepanel({
 				<>
 					<h1 className="title">Education</h1>
 					{isAddingNewEntry === false && (
-						<ActionBtn
-							className={"addBtn educationBtn"}
-							text={"+ Add Education"}
-							handleClick={handleIsAddingNewEntryState}
-						></ActionBtn>
+						<>
+							<div className="entriesWrapper">
+								{dataEntries.education.map((entry) => (
+									<Entry
+										title={entry.schoolName}
+										handleClick={""}
+										handleDelete={""}
+									></Entry>
+								))}
+							</div>
+
+							<ActionBtn
+								className={"addBtn educationBtn"}
+								text={"+ Add Education"}
+								handleClick={handleIsAddingNewEntryState}
+							></ActionBtn>
+						</>
 					)}
 					{isAddingNewEntry === true && (
 						<>
@@ -37,7 +56,9 @@ function Sidepanel({
 								<ActionBtn
 									className={"saveBtn"}
 									text={"Save"}
-									handleClick={""}
+									handleClick={() => {
+										handleIsAddingNewEntryState();
+									}}
 								></ActionBtn>
 							</div>
 						</>
@@ -221,6 +242,19 @@ function ActionBtn({ className, text, handleClick }) {
 		<button className={className} onClick={handleClick}>
 			{text}
 		</button>
+	);
+}
+
+function Entry({ title, handleClick, handleDelete }) {
+	return (
+		<div className={"entry"}>
+			<button className="entryBtn" onClick={handleClick}>
+				{title}
+			</button>
+			<button className="deleteBtn" onClick={handleDelete}>
+				<img src={bin} alt="delete" />
+			</button>
+		</div>
 	);
 }
 
