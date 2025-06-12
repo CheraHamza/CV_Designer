@@ -1,11 +1,19 @@
-import Previewsection from "./Previewsection.jsx";
-import Editor from "./Editor.jsx";
+import Preview from "./preview/Preview.jsx";
+import Editor from "./cv-editor/Editor.jsx";
+import { saveData, loadData } from "../data.js";
+import { useState } from "react";
 
 function App() {
+	const [data, setData] = useState(loadData);
+
+	window.addEventListener("beforeunload", () => {
+		saveData(data);
+	});
+
 	return (
 		<>
-			<Editor></Editor>
-			<Previewsection></Previewsection>
+			<Editor data={data} setData={setData}></Editor>
+			<Preview data={data}></Preview>
 		</>
 	);
 }
