@@ -1,0 +1,227 @@
+:root {
+	--deep-blue: #00171f;
+	--deep-green: #0a252e;
+	--light-blue: #c9e1f1;
+	--gold-yellow: #ffb400;
+	--dark-gray: #565656;
+	--light-gray: #c2c2c2;
+
+	--fs-xl: 1.7rem;
+	--fs-lg: 1.4rem;
+	--fs-md: 1.05rem;
+	--fs-sm: 0.8rem;
+	--fs-xs: 0.7rem;
+}
+
+h1,
+h2,
+h3,
+p {
+	margin: 0;
+	padding: 0;
+}
+
+h1,
+h2 {
+	letter-spacing: 2px;
+}
+
+.preview {
+	display: grid;
+	justify-content: center;
+	background-color: var(--deep-blue);
+	text-align: justify;
+	background-image: radial-gradient(#c9e1f175, 5%, transparent 0);
+	background-size: 35px 35px;
+}
+
+.cv {
+	position: relative;
+	display: flex;
+	width: 180mm;
+	height: 260mm;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	transform-origin: top;
+	scale: 0.6;
+}
+
+.cv::before {
+	content: "";
+	position: absolute;
+	top: -10px;
+	left: -10px;
+	right: -10px;
+	bottom: -10px;
+	z-index: -1;
+	background: linear-gradient(to right, #256d86, #94abb9);
+}
+
+.cvLeft {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 65mm;
+	height: 100%;
+	background-color: var(--deep-blue);
+	color: white;
+	overflow: hidden;
+	z-index: 0;
+}
+
+.cvPic-bg {
+	position: absolute;
+	align-self: center;
+	width: 150%;
+	height: 270px;
+	border-radius: 50%;
+	transform: translateY(-50%);
+	background-color: var(--light-blue);
+	z-index: -1;
+}
+
+.cvLeft h1 {
+	color: var(--deep-blue);
+	font-size: var(--fs-xl);
+	font-weight: 600;
+	text-align: center;
+	margin: 30px 0 15px;
+}
+
+.cvLeft h2 {
+	margin-top: 30px;
+	font-size: var(--fs-md);
+	font-weight: 500;
+}
+
+.cvLeft > img {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	align-self: center;
+}
+
+.sectionsWrapper {
+	margin: 0 10px;
+}
+
+.personalWrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.personalElement {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.personalElement > img {
+	width: 20px;
+}
+.personalElement h3 {
+	font-size: var(--fs-sm);
+	font-weight: 400;
+}
+
+.personalElement p {
+	font-size: var(--fs-xs);
+	color: var(--light-gray);
+}
+
+.cvLeft ul {
+	color: var(--light-gray);
+	font-size: var(--fs-sm);
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin: 20px 0 0;
+	padding-left: 20px;
+}
+
+.cvRight {
+	background-color: white;
+	width: 135mm;
+	padding: 40px 30px 30px 10px;
+}
+
+.cvRight p {
+	font-size: var(--fs-xs);
+	color: var(--dark-gray);
+}
+
+.workExpWrapper,
+.educationWrapper,
+.projectsWrapper,
+.skillsWrapper {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.cvRight h1 {
+	font-size: var(--fs-lg);
+	font-weight: 600;
+}
+
+.cvRight h2 {
+	font-size: var(--fs-md);
+	font-weight: 500;
+}
+
+.workExpElement {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.entryHeader {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.workExpElement > p,
+.projectElement > p,
+.bioText {
+	font-size: var(--fs-xs);
+}
+
+.entryHeader p {
+	font-size: var(--fs-xs);
+}
+
+hr {
+	border: 0;
+	border-top: 1px solid var(--light-gray);
+	margin: 20px 0;
+}
+
+
+@media (max-width: 420px) {
+	.cv {
+		margin: 0;
+	}
+	.cv::before {
+		content: none;
+	}
+}
+
+@media (min-width: 650px) {
+	.cv {
+		scale: 0.9;
+	}
+}
+
+@media (max-width: 1100px) and (min-width: 720px) {
+	.cv {
+		scale: 1;
+	}
+}
+
+@media (min-width: 1200px) {
+	.cv {
+		scale: 1;
+	}
+}
