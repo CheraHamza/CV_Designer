@@ -1,0 +1,267 @@
+:root {
+	--deep-blue: #00171f;
+	--deep-green: #0a252e;
+	--light-blue: #c9e1f1;
+	--gold-yellow: #ffb400;
+
+	--fs-xl: 1.5rem;
+	--fs-lg: 1.3rem;
+	--fs-sm: 0.8rem;
+	--fs-xs: 0.7rem;
+}
+
+.navBar {
+	display: flex;
+	flex-direction: column;
+	background-color: var(--deep-blue);
+}
+
+.navBar > img {
+	align-self: center;
+	margin-top: 10px;
+	margin-bottom: 50px;
+}
+
+.btnsWrapper {
+	display: flex;
+	flex-direction: column;
+}
+
+img {
+	width: 30px;
+	height: 30px;
+}
+
+.navBtn {
+	display: flex;
+	border: 0;
+	padding: 10px;
+	background-color: var(--deep-blue);
+	cursor: pointer;
+}
+
+.navBtn.selected {
+	background-color: var(--deep-green);
+}
+
+.sidepanel {
+	background-color: var(--deep-green);
+	color: white;
+	padding: 10px 20px;
+}
+
+.sidepanel h1 {
+	font-size: var(--fs-xl);
+	margin: 10px 0px;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-top: 40px;
+}
+
+.formWrapper {
+	width: min(700px, 100%);
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.inputField,
+.inputAreaField {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+label {
+	font-size: var(--fs-sm);
+	color: var(--gold-yellow);
+}
+
+span.required {
+	color: rgb(161, 7, 7);
+}
+
+input,
+textarea {
+	border: 0;
+	border-radius: 2px;
+	padding: 5px;
+}
+
+.pictureChooserWrapper {
+	display: flex;
+	justify-content: center;
+}
+
+input[type="file"] {
+	display: none;
+}
+
+.custom-file-upload {
+	opacity: 0.8;
+	border-radius: 50%;
+	cursor: pointer;
+}
+.custom-file-upload:hover {
+	opacity: 1;
+	overflow: hidden;
+}
+
+.custom-file-upload img {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+}
+
+textarea {
+	min-height: 150px;
+	resize: vertical;
+}
+
+.formBtns {
+	display: flex;
+	justify-content: space-evenly;
+	margin-top: 20px;
+}
+
+button.saveBtn,
+button.cancelBtn {
+	height: 27px;
+	width: 120px;
+}
+
+button.saveBtn {
+	background-color: var(--gold-yellow);
+	color: var(--deep-blue);
+	border: 0;
+	padding: 5px 25px;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+button.saveBtn:hover {
+	border: 1px solid var(--gold-yellow);
+	background-color: transparent;
+	color: white;
+}
+
+button.cancelBtn {
+	background-color: transparent;
+	color: white;
+	border: 1px solid var(--gold-yellow);
+	padding: 5px 25px;
+	cursor: pointer;
+	font-weight: bold;
+}
+
+button.cancelBtn:hover {
+	background-color: var(--gold-yellow);
+	color: var(--deep-blue);
+	border: 0;
+}
+
+button.addBtn {
+	background-color: transparent;
+	margin-top: 15px;
+
+	padding: 0;
+	border: 0;
+	color: var(--light-blue);
+	cursor: pointer;
+}
+
+button.addBtn:hover {
+	color: var(--gold-yellow);
+}
+
+.entriesWrapper {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin-top: 20px;
+}
+
+.entry {
+	width: min(500px, 90%);
+	position: relative;
+}
+
+button.entryBtn {
+	width: 100%;
+	height: 40px;
+	background-color: var(--deep-blue);
+	color: var(--gold-yellow);
+	border: 0;
+	cursor: pointer;
+}
+
+button.entryBtn:hover {
+	background-color: var(--gold-yellow);
+	color: var(--deep-blue);
+	border: 0;
+}
+
+button.deleteBtn {
+	position: absolute;
+	height: 40px;
+	background-color: transparent;
+	border: 0;
+	cursor: pointer;
+}
+
+button.deleteBtn:hover {
+	background-color: var(--light-blue);
+}
+
+@media (max-width: 1100px) {
+	.navBar > img {
+		margin-bottom: 10px;
+	}
+	.btnsWrapper {
+		flex-direction: row;
+		justify-content: center;
+	}
+
+	form {
+		align-items: center;
+	}
+
+	.formWrapper {
+		flex-direction: row;
+		flex-wrap: wrap;
+		gap: 20px;
+	}
+
+	.inputField {
+		flex: 1 1 290px;
+	}
+
+	.inputAreaField,
+	.formBtns {
+		flex: 1 1 100%;
+	}
+
+	.sidepanel {
+		padding-left: 50px;
+		padding-right: 50px;
+	}
+
+	.sidepanel > h1 {
+		font-size: var(--fs-lg);
+		justify-self: center;
+	}
+
+	.addBtn {
+		display: block;
+		justify-self: center;
+	}
+
+	.entriesWrapper {
+		align-items: center;
+	}
+}
