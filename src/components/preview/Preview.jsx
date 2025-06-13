@@ -3,6 +3,7 @@ import emailIcon from "/email.svg";
 import teleIcon from "/tele.svg";
 import locationIcon from "/location.svg";
 import "../../styles/preview.css";
+import { useRef, useEffect, useState } from "react";
 
 function Preview({ data }) {
 	return (
@@ -30,7 +31,7 @@ function CV({ data }) {
 		<div className="cv">
 			<div className="cvLeft">
 				<div className="cvPic-bg"></div>
-				<h1>{fullName}</h1>
+				<ResponsiveName fullName={fullName} />
 				<img src={picture} alt="" />
 				<div className="sectionsWrapper">
 					<div className="personalWrapper">
@@ -176,6 +177,36 @@ function ProjectElement({ className, title, description }) {
 			<h2>{title}</h2>
 			<p>{description}</p>
 		</div>
+	);
+}
+
+function ResponsiveName({ fullName }) {
+	const nameRef = useRef(null);
+	const [fontSize, setFontSize] = useState(27.2);
+	const fixedHeight = 40;
+
+	useEffect(() => {
+		const element = nameRef.current;
+		if (!element) return;
+		let currentFontSize = 27.2;
+		element.style.fontSize = currentFontSize + "px";
+		while (element.scrollWidth > element.clientWidth && currentFontSize > 10) {
+			currentFontSize--;
+			element.style.fontSize = currentFontSize + "px";
+		}
+		setFontSize(currentFontSize);
+	}, [fullName]);
+
+	return (
+		<h1
+			ref={nameRef}
+			style={{
+				fontSize: fontSize + "px",
+				height: fixedHeight + "px",
+			}}
+		>
+			{fullName}
+		</h1>
 	);
 }
 
