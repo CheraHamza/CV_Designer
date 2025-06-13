@@ -44,6 +44,13 @@ export default function PersonalForm({ data, setData }) {
 					onChange={(e) => handlePictureChange(e.target.files[0])}
 				/>
 			</div>
+			<button
+				type="button"
+				className="removePictureBtn"
+				onClick={() => handlePictureChange(undefined)}
+			>
+				Remove
+			</button>
 
 			<div className="formWrapper">
 				<div className="inputField">
