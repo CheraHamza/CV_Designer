@@ -7,7 +7,7 @@ import "../../styles/preview.css";
 function Preview({ data }) {
 	return (
 		<div className="preview">
-				<CV data={data}></CV>
+			<CV data={data}></CV>
 		</div>
 	);
 }
@@ -86,7 +86,7 @@ function CV({ data }) {
 					{education.map((element) => (
 						<EntryHeader
 							title={element.schoolName}
-							subTitle={element.degree}
+							subTitle={element.degree + ", " + element.location}
 							timeSpan={element.startDate + " - " + element.endDate}
 						></EntryHeader>
 					))}

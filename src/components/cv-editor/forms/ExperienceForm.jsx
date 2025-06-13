@@ -80,7 +80,7 @@ export default function ExperienceForm({
 				</div>
 
 				<div className="inputField">
-					<label htmlFor="locationInput">Location</label>
+					<label htmlFor="locationInput">City</label>
 					<input
 						id="locationInput"
 						type="text"
