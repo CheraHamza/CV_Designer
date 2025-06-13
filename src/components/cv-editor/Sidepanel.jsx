@@ -52,7 +52,7 @@ function Sidepanel({ activeNavItem, data, setData }) {
 		}
 		setData((prevData) => ({
 			...prevData,
-			[section]: [...prevData[section], newEntry],
+			[section]: [newEntry, ...prevData[section]],
 		}));
 		setFormsState((prevState) => ({
 			...prevState,
