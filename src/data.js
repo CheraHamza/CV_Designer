@@ -17,7 +17,7 @@ const initData = {
 			degree: "Bachelor in Computer Science",
 			startDate: "2020",
 			endDate: "2024",
-			location: "Massachusetts, USA",
+			location: "Massachusetts",
 		},
 		{
 			id: crypto.randomUUID(),
@@ -25,7 +25,7 @@ const initData = {
 			degree: "Master in Computer Science",
 			startDate: "2024",
 			endDate: "2026",
-			location: "Oxford, England",
+			location: "Oxford",
 		},
 	],
 	work: [
