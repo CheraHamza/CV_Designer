@@ -110,7 +110,7 @@ function CV({ data }) {
 						<h2>Interests</h2>
 						<ul>
 							{interests.map((interest) => (
-								<li>{interest}</li>
+								<li key={interest}>{interest}</li>
 							))}
 						</ul>
 					</div>
@@ -118,7 +118,7 @@ function CV({ data }) {
 						<h2>Languages</h2>
 						<ul>
 							{languages.map((language) => (
-								<li>{language}</li>
+								<li key={language}>{language}</li>
 							))}
 						</ul>
 					</div>
@@ -131,6 +131,7 @@ function CV({ data }) {
 					<h1>Education</h1>
 					{education.map((element) => (
 						<EntryHeader
+							key={element.id}
 							title={element.schoolName}
 							subTitle={element.degree + ", " + element.location}
 							timeSpan={element.startDate + " - " + element.endDate}
@@ -142,6 +143,7 @@ function CV({ data }) {
 					<h1>Work Experience</h1>
 					{workExperiences.map((workExperience) => (
 						<WorkExpElement
+							key={workExperience.id}
 							job={workExperience.job}
 							company={workExperience.company}
 							location={workExperience.location}
@@ -156,6 +158,7 @@ function CV({ data }) {
 					<h1>Projects</h1>
 					{projects.map((project) => (
 						<ProjectElement
+							key={project.id}
 							title={project.projectName}
 							description={project.description}
 						></ProjectElement>
@@ -174,7 +177,7 @@ function CV({ data }) {
 function PersonalElement({ className, icon, title, text }) {
 	return (
 		<div className={"personalElement " + className}>
-			<img src={icon} />
+			<img src={icon} alt="" />
 			<div>
 				<h3>{title}</h3>
 				<p>{text}</p>

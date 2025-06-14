@@ -24,12 +24,14 @@ function Navbar({ activeNavItem, onNavChange }) {
 			<div className="btnsWrapper">
 				{navItems.map((item) => (
 					<button
+						aria-label={"Navigate to " + item.key}
+						key={item.key}
 						className={
 							"navBtn" + (item.key === activeNavItem ? " selected" : "")
 						}
 						onClick={() => onNavChange(item.key)}
 					>
-						<img className="navLogo" src={item.icon} />
+						<img className="navLogo" src={item.icon} alt="" />
 					</button>
 				))}
 			</div>
