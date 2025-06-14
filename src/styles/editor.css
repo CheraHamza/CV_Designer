@@ -268,7 +268,7 @@ button.deleteBtn:hover {
 
 	.sidepanel > h1 {
 		font-size: var(--fs-lg);
-		justify-self: center;
+		text-align: center;
 	}
 
 	.addBtn {
@@ -278,5 +278,19 @@ button.deleteBtn:hover {
 
 	.entriesWrapper {
 		align-items: center;
+	}
+}
+
+@media (max-width: 360px) {
+	.sidepanel h1 {
+		font-size: 1rem;
+	}
+
+	.navBtn {
+		padding: 5px;
+	}
+	.navBtn img {
+		width: 25px;
+		height: 25px;
 	}
 }
