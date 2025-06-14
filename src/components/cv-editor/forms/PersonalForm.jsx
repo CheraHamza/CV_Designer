@@ -14,6 +14,12 @@ export default function PersonalForm({ data, setData }) {
 					personal: { ...data.personal, picture: reader.result },
 				});
 			};
+			reader.onerror = () => {
+				setData({
+					...data,
+					personal: { ...data.personal, picture: imgPlaceholder },
+				});
+			};
 			reader.readAsDataURL(file);
 		} else {
 			setData({
