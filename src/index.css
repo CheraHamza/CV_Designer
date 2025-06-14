@@ -1,5 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap");
 
+:root {
+	--deep-blue: #00171f;
+	--deep-green: #0a252e;
+	--light-blue: #c9e1f1;
+	--gold-yellow: #ffb400;
+	--dark-gray: #565656;
+	--light-gray: #c2c2c2;
+
+	--fs-xl: 1.5rem;
+	--fs-lg: 1.3rem;
+	--fs-md: 1rem;
+	--fs-sm: 0.8rem;
+	--fs-xs: 0.75rem;
+}
+
 html,
 body {
 	margin: 0;
