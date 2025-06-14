@@ -4,6 +4,7 @@ import teleIcon from "/tele.svg";
 import locationIcon from "/location.svg";
 import "../../styles/preview.css";
 import { useRef, useEffect, useState } from "react";
+
 function Preview({ data }) {
 	const containerRef = useRef(null);
 	const [scale, setScale] = useState(1);
@@ -230,15 +231,33 @@ function ResponsiveName({ fullName }) {
 	const fixedHeight = 40;
 
 	useEffect(() => {
-		const element = nameRef.current;
-		if (!element) return;
-		let currentFontSize = 27.2;
-		element.style.fontSize = currentFontSize + "px";
-		while (element.scrollWidth > element.clientWidth && currentFontSize > 10) {
-			currentFontSize--;
+		const adjustFontSize = () => {
+			const element = nameRef.current;
+			if (!element) return;
+
+			let currentFontSize = 27.2;
 			element.style.fontSize = currentFontSize + "px";
+
+			while (
+				element.scrollWidth > element.clientWidth &&
+				currentFontSize > 10
+			) {
+				currentFontSize--;
+				element.style.fontSize = currentFontSize + "px";
+			}
+
+			setFontSize(currentFontSize);
+		};
+
+		adjustFontSize();
+
+		if (document.fonts) {
+			document.fonts.ready.then(adjustFontSize);
 		}
-		setFontSize(currentFontSize);
+
+		const timeoutId = setTimeout(adjustFontSize, 500);
+
+		return () => clearTimeout(timeoutId);
 	}, [fullName]);
 
 	return (
