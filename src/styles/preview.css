@@ -1,18 +1,3 @@
-:root {
-	--deep-blue: #00171f;
-	--deep-green: #0a252e;
-	--light-blue: #c9e1f1;
-	--gold-yellow: #ffb400;
-	--dark-gray: #565656;
-	--light-gray: #c2c2c2;
-
-	--fs-xl: 1.7rem;
-	--fs-lg: 1.4rem;
-	--fs-md: 1.05rem;
-	--fs-sm: 0.8rem;
-	--fs-xs: 0.7rem;
-}
-
 h1,
 h2,
 h3,
@@ -39,7 +24,7 @@ h2 {
 	position: relative;
 	display: flex;
 	width: 180mm;
-	height: 260mm;
+	min-height: 260mm;
 	margin-top: 2rem;
 	margin-bottom: 2rem;
 }
@@ -60,7 +45,6 @@ h2 {
 	display: flex;
 	flex-direction: column;
 	width: 65mm;
-	height: 100%;
 	background-color: var(--deep-blue);
 	color: white;
 	overflow: hidden;
@@ -137,6 +121,10 @@ h2 {
 	gap: 10px;
 	margin: 20px 0 0;
 	padding-left: 20px;
+}
+
+.languagesWrapper {
+	margin-bottom: 30px;
 }
 
 .cvRight {
