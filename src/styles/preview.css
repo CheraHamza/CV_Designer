@@ -42,8 +42,6 @@ h2 {
 	height: 260mm;
 	margin-top: 2rem;
 	margin-bottom: 2rem;
-	transform-origin: top;
-	scale: 0.6;
 }
 
 .cv::before {
@@ -197,31 +195,4 @@ hr {
 	border: 0;
 	border-top: 1px solid var(--light-gray);
 	margin: 20px 0;
-}
-
-@media (max-width: 420px) {
-	.cv {
-		margin: 0;
-	}
-	.cv::before {
-		content: none;
-	}
-}
-
-@media (min-width: 650px) {
-	.cv {
-		scale: 0.9;
-	}
-}
-
-@media (max-width: 1100px) and (min-width: 720px) {
-	.cv {
-		scale: 1;
-	}
-}
-
-@media (min-width: 1200px) {
-	.cv {
-		scale: 1;
-	}
 }

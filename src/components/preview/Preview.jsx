@@ -4,11 +4,55 @@ import teleIcon from "/tele.svg";
 import locationIcon from "/location.svg";
 import "../../styles/preview.css";
 import { useRef, useEffect, useState } from "react";
-
 function Preview({ data }) {
+	const containerRef = useRef(null);
+	const [scale, setScale] = useState(1);
+
+	useEffect(() => {
+		const checkOverflowAndScale = () => {
+			const container = containerRef.current;
+			if (!container) return;
+			const cv = container.querySelector(".cv");
+			if (!cv) return;
+
+			let newScale = 1;
+			cv.style.transform = "scale(1)";
+			cv.style.transformOrigin = "top";
+
+			const containerWidth = container.offsetWidth;
+			const containerHeight = container.offsetHeight;
+			const cvWidth = cv.scrollWidth + 21;
+			const cvHeight = cv.scrollHeight + 21;
+
+			while (
+				newScale > 0.1 &&
+				(cvWidth * newScale > containerWidth ||
+					cvHeight * newScale > containerHeight)
+			) {
+				newScale -= 0.1;
+			}
+
+			setScale(Number(newScale.toFixed(2)));
+		};
+
+		checkOverflowAndScale();
+		window.addEventListener("resize", checkOverflowAndScale);
+		return () => window.removeEventListener("resize", checkOverflowAndScale);
+	}, [data]);
+
 	return (
-		<div className="preview">
-			<CV data={data}></CV>
+		<div className="preview" ref={containerRef}>
+			<div
+				className="cv-wrapper"
+				style={{
+					transform: `scale(${scale})`,
+					transformOrigin: "top",
+					width: "100%",
+					transition: "transform 0.2s",
+				}}
+			>
+				<CV data={data} />
+			</div>
 		</div>
 	);
 }
